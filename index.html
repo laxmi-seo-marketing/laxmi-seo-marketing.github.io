@@ -1,45 +1,653 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
-    <title>SEO Practice Website | Laxmi SEO Marketing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wanderwise Journal | Travel Guides, Itineraries & Travel Tips</title>
 
     <meta name="description"
-          content="SEO practice website created to learn and implement technical SEO, on-page SEO and content optimization.">
+        content="Explore inspiring destinations, practical travel guides, detailed itineraries and useful travel tips for curious travelers around the world.">
 
-    <meta name="robots"
-          content="index, follow">
+    <meta name="robots" content="index, follow">
 
     <link rel="canonical"
-          href="https://laxmi-seo-marketing.github.io/">
+        href="https://laxmi-seo-marketing.github.io/">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+
+        header {
+            border-bottom: 1px solid #e5e5e5;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 25px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #123c52;
+        }
+
+        .tagline {
+            color: #777;
+            font-size: 14px;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px 15px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        nav a:hover {
+            color: #147d92;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 25px;
+        }
+
+        .hero-box {
+            min-height: 430px;
+            border-radius: 18px;
+            padding: 60px;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.75),
+                    rgba(0,0,0,0.05)
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=85")
+                center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .category {
+            display: inline-block;
+            background: #ffffff;
+            color: #123c52;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #f4f4f4;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #123c52;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .btn:hover {
+            background: #e9f5f7;
+        }
+
+        /* SECTION */
+
+        .section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #123c52;
+            padding-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+        }
+
+        .section-heading a {
+            color: #147d92;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image-1 {
+            background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80");
+        }
+
+        .image-2 {
+            background-image: url("https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=900&q=80");
+        }
+
+        .image-3 {
+            background-image: url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80");
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-category {
+            color: #147d92;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            line-height: 1.3;
+            margin: 8px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .read-more {
+            color: #123c52;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* INTRO */
+
+        .intro {
+            background: #f5f8f8;
+            border-radius: 16px;
+            padding: 45px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .intro p {
+            max-width: 760px;
+            margin: auto;
+            color: #555;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 70px;
+            background: #123c52;
+            color: #ffffff;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 25px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        footer h3 {
+            margin-bottom: 12px;
+        }
+
+        footer p,
+        footer a {
+            color: #d8e2e6;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            color: #d8e2e6;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .hero-box {
+                padding: 35px 25px;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
+    <!-- HEADER -->
+
     <header>
-        <h1>SEO Practice Website</h1>
+
+        <div class="top-bar">
+
+            <div>
+                <div class="logo">Wanderwise Journal</div>
+                <div class="tagline">Travel smarter. Explore further.</div>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="travel-guides.html">Travel Guides</a>
+            <a href="itineraries.html">Itineraries</a>
+            <a href="travel-tips.html">Travel Tips</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
     </header>
+
+
+    <!-- HERO -->
 
     <main>
 
-        <h2>Learn SEO Through Practical Projects</h2>
+        <section class="hero">
 
-        <p>
-            This website is created as an SEO practice project
-            to learn technical SEO, on-page SEO and content optimization.
-        </p>
+            <div class="hero-box">
 
-        <h2>What We Practice</h2>
+                <div class="hero-content">
 
-        <p>
-            Keyword research, SEO-friendly content, internal linking,
-            technical SEO, website indexing and Google Search Console.
-        </p>
+                    <span class="category">FEATURED TRAVEL</span>
+
+                    <h1>
+                        Discover Places Worth Exploring
+                    </h1>
+
+                    <p>
+                        Destination inspiration, practical travel guides
+                        and thoughtful itineraries for your next adventure.
+                    </p>
+
+                    <a class="btn" href="destinations.html">
+                        Explore Destinations
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LATEST STORIES -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>Latest Travel Stories</h2>
+
+                <a href="blog.html">View all stories →</a>
+
+            </div>
+
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <div class="card-image image-1"></div>
+
+                    <div class="card-content">
+
+                        <div class="card-category">
+                            DESTINATIONS
+                        </div>
+
+                        <h3>
+                            Places That Belong on Your Travel List
+                        </h3>
+
+                        <p>
+                            Discover destinations that offer memorable
+                            scenery, local experiences and something different.
+                        </p>
+
+                        <a class="read-more" href="blog/places-worth-visiting.html">
+                            Read Story →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-image image-2"></div>
+
+                    <div class="card-content">
+
+                        <div class="card-category">
+                            ITINERARIES
+                        </div>
+
+                        <h3>
+                            How to Plan a Stress-Free City Trip
+                        </h3>
+
+                        <p>
+                            A practical approach to planning your days,
+                            choosing experiences and avoiding unnecessary rush.
+                        </p>
+
+                        <a class="read-more" href="blog/stress-free-city-trip.html">
+                            Read Story →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-image image-3"></div>
+
+                    <div class="card-content">
+
+                        <div class="card-category">
+                            TRAVEL TIPS
+                        </div>
+
+                        <h3>
+                            Simple Ways to Travel Smarter
+                        </h3>
+
+                        <p>
+                            Useful travel habits that can make planning,
+                            packing and exploring much easier.
+                        </p>
+
+                        <a class="read-more" href="blog/travel-smarter.html">
+                            Read Story →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+
+        <section class="section">
+
+            <div class="intro">
+
+                <h2>Travel With Curiosity</h2>
+
+                <p>
+                    Wanderwise Journal is a travel publication for curious
+                    travelers looking for useful destination guides,
+                    realistic itineraries and practical advice before
+                    their next journey.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- POPULAR CATEGORIES -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>Explore Travel Topics</h2>
+
+            </div>
+
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <div class="card-content">
+                        <div class="card-category">01</div>
+                        <h3>Destinations</h3>
+                        <p>
+                            Explore cities, countries and interesting
+                            places around the world.
+                        </p>
+                        <a class="read-more" href="destinations.html">
+                            Explore →
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-content">
+                        <div class="card-category">02</div>
+                        <h3>Travel Guides</h3>
+                        <p>
+                            Practical information to help you plan a better trip.
+                        </p>
+                        <a class="read-more" href="travel-guides.html">
+                            Explore →
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-content">
+                        <div class="card-category">03</div>
+                        <h3>Itineraries</h3>
+                        <p>
+                            Easy-to-follow plans for different destinations
+                            and trip lengths.
+                        </p>
+                        <a class="read-more" href="itineraries.html">
+                            Explore →
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
 
     </main>
 
-</body>
 
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+
+                <h3>Wanderwise Journal</h3>
+
+                <p>
+                    Travel smarter. Explore further.
+                    Discover useful travel stories,
+                    guides and ideas for your next adventure.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <div class="footer-links">
+                    <a href="destinations.html">Destinations</a>
+                    <a href="travel-guides.html">Travel Guides</a>
+                    <a href="itineraries.html">Itineraries</a>
+                    <a href="travel-tips.html">Travel Tips</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>Information</h3>
+
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 Wanderwise Journal. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
 </html>
