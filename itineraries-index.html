@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Itineraries | Wanderwise Journal</title>
+
+    <meta name="description"
+        content="Ready-to-follow travel itineraries for popular destinations, from 3-day city trips to longer multi-country journeys.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+        href="https://laxmi-seo-marketing.github.io/itineraries/">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            border-bottom: 1px solid #e5e5e5;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 25px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #123c52;
+        }
+
+        .tagline {
+            color: #777;
+            font-size: 14px;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px 15px;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        nav a.active,
+        nav a:hover {
+            color: #147d92;
+        }
+
+        .page-header {
+            max-width: 1200px;
+            margin: 35px auto 10px;
+            padding: 0 25px;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb a {
+            color: #147d92;
+            font-weight: 700;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            color: #123c52;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .filters {
+            max-width: 1200px;
+            margin: 25px auto 0;
+            padding: 0 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tag {
+            border: 1px solid #d5dde0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #123c52;
+        }
+
+        .filter-tag.active {
+            background: #123c52;
+            color: #ffffff;
+            border-color: #123c52;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 45px auto;
+            padding: 0 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .duration-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #ffffff;
+            color: #123c52;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .img-1 { background-image: url("https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"); }
+        .img-2 { background-image: url("https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=900&q=80"); }
+        .img-3 { background-image: url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80"); }
+        .img-4 { background-image: url("https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80"); }
+        .img-5 { background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80"); }
+        .img-6 { background-image: url("https://images.unsplash.com/photo-1555881551-4e70e0dbb489?auto=format&fit=crop&w=900&q=80"); }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-category {
+            color: #147d92;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            line-height: 1.3;
+            margin: 8px 0;
+            color: #123c52;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .read-more {
+            color: #123c52;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 70px;
+            background: #0e2c3d;
+            color: #ffffff;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 25px 35px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 18px;
+            font-size: 19px;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        footer h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: #147d92;
+        }
+
+        footer p,
+        footer a {
+            color: #b8c8d0;
+            font-size: 14px;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .footer-links a::before {
+            content: "▶";
+            font-size: 9px;
+            color: #147d92;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            gap: 11px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            text-align: center;
+            padding: 18px;
+            font-size: 13px;
+            color: #a2b4bc;
+        }
+
+        @media (max-width: 800px) {
+
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="top-bar">
+
+            <div>
+                <div class="logo">Wanderwise Journal</div>
+                <div class="tagline">Travel smarter. Explore further.</div>
+            </div>
+
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/destinations/">Destinations</a>
+            <a href="/travel-guides/">Travel Guides</a>
+            <a href="/itineraries/" class="active">Itineraries</a>
+            <a href="/travel-tips/">Travel Tips</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="page-header">
+
+            <div class="breadcrumb">
+                <a href="/">Home</a> / Itineraries
+            </div>
+
+            <h1>Travel Itineraries</h1>
+
+            <p>
+                Ready-to-follow day-by-day plans for popular destinations —
+                so you spend less time planning and more time exploring.
+            </p>
+
+        </section>
+
+
+        <div class="filters">
+            <span class="filter-tag active">All Itineraries</span>
+            <span class="filter-tag">Weekend Trips</span>
+            <span class="filter-tag">City Breaks</span>
+            <span class="filter-tag">Multi-Country</span>
+        </div>
+
+
+        <section class="section">
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-image img-1">
+                        <span class="duration-badge">3 Days</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">City Break</div>
+                        <h3>3-Day Paris Itinerary</h3>
+                        <p>
+                            From the Louvre to Montmartre, a realistic
+                            plan to see the best of Paris in 3 days.
+                        </p>
+                        <a class="read-more" href="/itineraries/paris-3-days/">View Itinerary →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image img-2">
+                        <span class="duration-badge">5 Days</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">City Break</div>
+                        <h3>5 Days in Rome and the Amalfi Coast</h3>
+                        <p>
+                            Split your trip between Rome's history and
+                            the coastal beauty of Amalfi.
+                        </p>
+                        <a class="read-more" href="/itineraries/rome-amalfi-5-days/">View Itinerary →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image img-3">
+                        <span class="duration-badge">7 Days</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Multi-Country</div>
+                        <h3>7-Day Japan First-Timer Itinerary</h3>
+                        <p>
+                            Tokyo, Kyoto and Osaka covered at a comfortable
+                            pace for first-time visitors.
+                        </p>
+                        <a class="read-more" href="/itineraries/japan-7-days/">View Itinerary →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image img-4">
+                        <span class="duration-badge">4 Days</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Weekend Trip</div>
+                        <h3>4 Days in Lisbon and Sintra</h3>
+                        <p>
+                            A relaxed plan to explore Lisbon's streets
+                            and Sintra's fairytale palaces.
+                        </p>
+                        <a class="read-more" href="/itineraries/lisbon-sintra-4-days/">View Itinerary →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image img-5">
+                        <span class="duration-badge">10 Days</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Multi-Country</div>
+                        <h3>10-Day Golden Triangle Tour, India</h3>
+                        <p>
+                            Delhi, Agra and Jaipur — India's classic
+                            first-time travel route.
+                        </p>
+                        <a class="read-more" href="/itineraries/golden-triangle-india-10-days/">View Itinerary →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image img-6">
+                        <span class="duration-badge">6 Days</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">City Break</div>
+                        <h3>6 Days in Bangkok and the Islands</h3>
+                        <p>
+                            City energy followed by island time —
+                            a balanced Thailand itinerary.
+                        </p>
+                        <a class="read-more" href="/itineraries/bangkok-islands-6-days/">View Itinerary →</a>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+                <h3>Wanderwise Journal</h3>
+                <p>
+                    At Wanderwise Journal, we believe travel should be
+                    simple, thoughtful and inspiring. From destination
+                    ideas to practical guides, we help you plan your
+                    next adventure with confidence.
+                </p>
+            </div>
+
+            <div>
+                <h3>Categories</h3>
+                <div class="footer-links">
+                    <a href="/destinations/">Destinations</a>
+                    <a href="/travel-guides/">Travel Guides</a>
+                    <a href="/itineraries/">Itineraries</a>
+                    <a href="/travel-tips/">Travel Tips</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <a href="/disclaimer/">Disclaimer</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Wanderwise Journal. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
