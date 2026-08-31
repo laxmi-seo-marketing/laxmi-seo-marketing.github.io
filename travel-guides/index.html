@@ -34,8 +34,6 @@
             color: inherit;
         }
 
-        /* HEADER */
-
         header {
             border-bottom: 1px solid #e5e5e5;
             background: #ffffff;
@@ -86,8 +84,6 @@
             color: #147d92;
         }
 
-        /* PAGE HEADER */
-
         .page-header {
             max-width: 1200px;
             margin: 35px auto 10px;
@@ -117,8 +113,6 @@
             font-size: 16px;
         }
 
-        /* FILTER TAGS */
-
         .filters {
             max-width: 1200px;
             margin: 25px auto 0;
@@ -143,15 +137,11 @@
             border-color: #123c52;
         }
 
-        /* SECTION */
-
         .section {
             max-width: 1200px;
             margin: 45px auto;
             padding: 0 25px;
         }
-
-        /* CARDS */
 
         .cards {
             display: grid;
@@ -181,334 +171,4 @@
         .img-1 { background-image: url("https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=900&q=80"); }
         .img-2 { background-image: url("https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"); }
         .img-3 { background-image: url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80"); }
-        .img-4 { background-image: url("https://images.unsplash.com/photo-1555881551-4e70e0dbb489?auto=format&fit=crop&w=900&q=80"); }
-        .img-5 { background-image: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80"); }
-        .img-6 { background-image: url("https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80"); }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-category {
-            color: #147d92;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .card h3 {
-            font-size: 20px;
-            line-height: 1.3;
-            margin: 8px 0;
-            color: #123c52;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 12px;
-        }
-
-        .read-more {
-            color: #123c52;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            margin-top: 70px;
-            background: #0e2c3d;
-            color: #ffffff;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 55px 25px 35px;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-        }
-
-        footer h3 {
-            margin-bottom: 18px;
-            font-size: 19px;
-            color: #ffffff;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        footer h3::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background: #147d92;
-        }
-
-        footer p,
-        footer a {
-            color: #b8c8d0;
-            font-size: 14px;
-        }
-
-        .footer-links a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 12px;
-            transition: color 0.2s ease, gap 0.2s ease;
-        }
-
-        .footer-links a::before {
-            content: "▶";
-            font-size: 9px;
-            color: #147d92;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-            gap: 11px;
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.15);
-            text-align: center;
-            padding: 18px;
-            font-size: 13px;
-            color: #a2b4bc;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .top-bar {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav {
-                gap: 15px;
-            }
-
-            .page-header h1 {
-                font-size: 30px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-            }
-        }
-
-    </style>
-</head>
-
-
-<body>
-
-    <!-- HEADER -->
-
-    <header>
-
-        <div class="top-bar">
-
-            <div>
-                <div class="logo">Wanderwise Journal</div>
-                <div class="tagline">Travel smarter. Explore further.</div>
-            </div>
-
-        </div>
-
-        <nav>
-            <a href="/">Home</a>
-            <a href="/destinations/">Destinations</a>
-            <a href="/travel-guides/" class="active">Travel Guides</a>
-            <a href="/itineraries/">Itineraries</a>
-            <a href="/travel-tips/">Travel Tips</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <!-- PAGE HEADER -->
-
-        <section class="page-header">
-
-            <div class="breadcrumb">
-                <a href="/">Home</a> / Travel Guides
-            </div>
-
-            <h1>Travel Guides</h1>
-
-            <p>
-                Practical, no-fluff guides covering budgeting, best time
-                to visit, things to do and local tips — everything you
-                need before you go.
-            </p>
-
-        </section>
-
-
-        <!-- FILTERS -->
-
-        <div class="filters">
-            <span class="filter-tag active">All Guides</span>
-            <span class="filter-tag">Budget Travel</span>
-            <span class="filter-tag">Best Time to Visit</span>
-            <span class="filter-tag">City Guides</span>
-            <span class="filter-tag">First-Time Travelers</span>
-        </div>
-
-
-        <!-- GUIDES -->
-
-        <section class="section">
-
-            <div class="cards">
-
-                <article class="card">
-                    <div class="card-image img-1"></div>
-                    <div class="card-content">
-                        <div class="card-category">City Guide</div>
-                        <h3>10 Best Things to Do in Rome</h3>
-                        <p>
-                            From the Colosseum to hidden trattorias,
-                            here's how to make the most of Rome.
-                        </p>
-                        <a class="read-more" href="guides/things-to-do-rome.html">Read Guide →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image img-2"></div>
-                    <div class="card-content">
-                        <div class="card-category">City Guide</div>
-                        <h3>A First-Timer's Guide to Paris</h3>
-                        <p>
-                            Skip the tourist traps with this practical
-                            guide to navigating Paris like a local.
-                        </p>
-                        <a class="read-more" href="guides/first-timers-paris.html">Read Guide →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image img-3"></div>
-                    <div class="card-content">
-                        <div class="card-category">Best Time to Visit</div>
-                        <h3>Best Time to Visit Japan</h3>
-                        <p>
-                            Cherry blossoms, autumn colors or quiet winters —
-                            here's when to plan your Japan trip.
-                        </p>
-                        <a class="read-more" href="guides/best-time-visit-japan.html">Read Guide →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image img-4"></div>
-                    <div class="card-content">
-                        <div class="card-category">Budget Travel</div>
-                        <h3>Budget Travel Guide to Portugal</h3>
-                        <p>
-                            How to explore Portugal's coastlines and
-                            cities without overspending.
-                        </p>
-                        <a class="read-more" href="guides/budget-portugal.html">Read Guide →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image img-5"></div>
-                    <div class="card-content">
-                        <div class="card-category">First-Time Travelers</div>
-                        <h3>A Beginner's Guide to Traveling in India</h3>
-                        <p>
-                            What to expect, how to plan and practical
-                            tips for first-time visitors to India.
-                        </p>
-                        <a class="read-more" href="guides/beginners-guide-india.html">Read Guide →</a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image img-6"></div>
-                    <div class="card-content">
-                        <div class="card-category">Budget Travel</div>
-                        <h3>How to Travel Thailand on a Budget</h3>
-                        <p>
-                            Practical tips on stays, food and transport
-                            to stretch your money further in Thailand.
-                        </p>
-                        <a class="read-more" href="guides/budget-thailand.html">Read Guide →</a>
-                    </div>
-                </article>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-inner">
-
-            <div>
-                <h3>Wanderwise Journal</h3>
-                <p>
-                    At Wanderwise Journal, we believe travel should be
-                    simple, thoughtful and inspiring. From destination
-                    ideas to practical guides, we help you plan your
-                    next adventure with confidence.
-                </p>
-            </div>
-
-            <div>
-                <h3>Categories</h3>
-                <div class="footer-links">
-                    <a href="/destinations/">Destinations</a>
-                    <a href="/travel-guides/">Travel Guides</a>
-                    <a href="/itineraries/">Itineraries</a>
-                    <a href="/travel-tips/">Travel Tips</a>
-                    <a href="/blog/">Blog</a>
-                </div>
-            </div>
-
-            <div>
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="/about/">About</a>
-                    <a href="/contact/">Contact</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="disclaimer.html">Disclaimer</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="copyright">
-            © 2026 Wanderwise Journal. All rights reserved.
-        </div>
-
-    </footer>
-
-</body>
-</html>
+        .img-4 { background-image:
